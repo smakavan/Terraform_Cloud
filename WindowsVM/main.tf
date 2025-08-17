@@ -84,7 +84,7 @@ resource "azurerm_windows_virtual_machine" "vm_name" {
   network_interface_ids = [
     azurerm_network_interface.nic_name1.id,
   ]
-
+  patch_mode = "AutomaticByPlatform"
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
