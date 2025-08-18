@@ -1,0 +1,17 @@
+---
+- name: Install apps on Windows VM (Install Java, Teams, Chrome)
+  hosts: all
+  tasks:
+    - name: Install Java
+      win_chocolatey:
+        name: openjdk
+        state: present
+    - name: Install Microsoft Teams
+      win_chocolatey:
+        name: microsoft-teams
+        state: present
+    - name: Install Google Chrome
+      win_chocolatey:
+        name: googlechrome
+        state: present
+        ignore_checksums: yes
